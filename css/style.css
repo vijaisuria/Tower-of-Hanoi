@@ -1,0 +1,179 @@
+/*Colors: #30A9DE
+          #E53A40
+          #EFDC05
+          #090707*/
+
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: #090707;
+  font-family: 'Press Start 2P', sans-serif;
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header {
+  color: white;
+}
+
+.moves {
+  text-align: right;
+  text-transform: uppercase;
+}
+
+h1 {
+  color: #E53A40;
+  font-size: 50px;
+}
+
+.container {
+  display: flex;
+  width: 700px;
+  height: 50vh;
+  border: 17px solid #30A9DE;
+  margin-top: 5px;
+}
+
+footer {
+  width: 100%;
+  margin: 20px;
+  text-align: right;
+}
+
+footer > a {
+  padding: 10px 20px 10px 20px;
+  color: #090707;
+  text-decoration: none;
+  background: white;
+  transition: all 100ms ease;
+  display: inline-block;
+}
+
+footer > a:hover {
+  background: #E53A40;
+}
+
+
+#reset:active {
+  transform: translate(0, 2px);
+  /*background: #30A9DE;*/
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  flex: auto;
+  margin: 0px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  cursor: pointer;
+  overflow-wrap: break-word;
+}
+
+.col+.col {
+  border-left: 10px dashed #EFDC05;
+}
+
+.ring {
+  height: 1.5rem;
+  background: #E53A40;
+  /*Easing from http://easings.net/*/
+  transition: all 150ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.bounce {
+  animation-name: bounce;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation-duration: 800ms;
+  animation-delay: 300ms;
+}
+
+@keyframes bounce {
+  0%, 90%    {transform: translate(0, -1rem)}
+  90%, 100%  {transform: translate(0, 0)}
+}
+
+.level-select {
+  color: white;
+  margin: auto -20rem  auto -20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 100ms ease;
+  font-size: 1.5rem;
+  -webkit-user-select: none; /* Chrome/Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+
+}
+
+.level-select-box {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.arrow:hover {
+  color: #E53A40;
+}
+
+.level {
+  color: white;
+  font-size: 4rem;
+  padding: .5rem;
+}
+
+
+
+.gameOver {
+  color: white;
+  margin: auto -20rem  auto -20rem ;
+  padding: 0;
+  font-size: .9rem;
+  z-index: 100;
+  text-align: center;
+}
+
+.report {
+  margin-top: 0;
+}
+
+.big {
+  font-size: 4rem;
+  animation-name: blink;
+  animation-iteration-count: infinite;
+  animation-duration: 1.5s;
+}
+
+@keyframes blink {
+  from {opacity: 0}
+  to {opacity: 1}
+}
+
+.hover {
+  transform: translate(0, -1rem);
+}
+
+.active {
+  background-color: white;
+  transform: translate(0, -1rem);
+}
+
+.rumble {
+  animation-duration: 250ms;
+  animation-name: rumble;
+  animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes rumble {
+  from {transform: rotate(10deg) translate(0, -1rem);}
+  60% {transform: rotate(-5deg) translate(0, -1rem);}
+  to {transform: translate(0, -1rem);}
+}
