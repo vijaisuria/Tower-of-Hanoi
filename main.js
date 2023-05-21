@@ -156,7 +156,7 @@ var game = {
   },
   generateRings: function(n) {
     $c1.children().remove();
-    this.rings = n;
+    // this.rings = n;
     var multiplier =  1/n;
     var width;
     for (var i = 0; i < n; i++) {
